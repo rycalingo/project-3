@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "express": "^4.16.3",
+    "node-sass": "^4.8.3",
     "nodemon": "^1.17.3",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
@@ -11,11 +12,12 @@
     "yarn": "^1.5.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts start & npm run watch-css",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "client": "cd client && yarn start",
+    "watch-css": "node-sass -w client/src/assets/scss/ -o client/src/assets/css/",
     "server": "nodemon server.js",
     "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
   },
