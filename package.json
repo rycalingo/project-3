@@ -12,12 +12,12 @@
     "yarn": "^1.5.1"
   },
   "scripts": {
-    "start": "react-scripts start & npm run watch-css",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "client": "cd client && yarn start",
-    "watch-css": "node-sass -w client/src/assets/scss/ -o client/src/assets/css/",
+    "client": "cd client && yarn start & npm run watch-css",
+    "watch-css": "node-sass -w client/public/assets/scss/ -o client/public/assets/css/",
     "server": "nodemon server.js",
     "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
   },

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 // import logo from './logo.svg';
 
-import './assets/css/styles.css';
+// import './assets/css/styles.css';
 
 class App extends Component {
   state = {
