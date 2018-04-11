@@ -9,11 +9,11 @@ class App extends Component {
     response: ''
   };
 
-  // componentDidMount() {
-  //   this.callApi()
-  //     .then(res => this.setState({ response: res.express }))
-  //     .catch(err => console.log(err));
-  // }
+  componentDidMount() {
+    this.callApi()
+      .then(res => this.setState({ response: res.express }))
+      .catch(err => console.log(err));
+  }
 
   callApi = async () => {
     const response = await fetch('/api/public');
