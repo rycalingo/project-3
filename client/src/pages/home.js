@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 
+import Navlist from "../components/Navlist";
+
+import './home.css';
 
 class Home extends Component {
     render() {
@@ -7,7 +10,8 @@ class Home extends Component {
             <div className="App">
 
                 <div className="pad-wrapper">
-                    <p>HERE!</p>
+                <Navlist />
+
                 </div>
 
             </div>

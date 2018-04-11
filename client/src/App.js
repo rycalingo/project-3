@@ -3,11 +3,11 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import home from "./pages/home";
 import Navbar from "./components/Navbar";
 
-import './styles/main.css';
+import './styles/css/main.css';
 
 const App = () =>
   <Router>
-    <div>
+    <div className="main-content">
       <Navbar />
       <Switch>
         <Route exact path="/" component={home} />
