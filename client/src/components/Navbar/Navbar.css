@@ -1,0 +1,9 @@
+#nav.navbar.navbar-default {
+  margin-bottom: 0;
+ ;
+}
+a.navbar-brand{
+  color: black;
+  text-align: center;
+  padding: 0px 0px 0px 50%;
+}
