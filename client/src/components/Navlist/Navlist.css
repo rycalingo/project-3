@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css?family=Patrick+Hand');
+
+.arrow-right:after {
+  content: " ";
+  width: 0;
+  height: 0;
+  /* background: url('../../images/arrow-right.svg') 0 0 / contain no-repeat; */
+  border-top: 22px solid transparent;
+  border-bottom: 22px solid transparent;
+  border-left: 22px solid #d4171e;
+  position: absolute;
+  top: 0;
+  right: -23px;
+}
+
+.navlist {
+  width: 180px;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 180px;
+  left: -189px;
+}
+
+.navlist li {
+  position: relative;
+  list-style: none;
+  background-color: #fbea9c;
+  width: inherit;
+  padding: 10px;
+  margin: 5px 0;
+  border-right: 1px solid #ffffff;
+  /* font style */
+  font-family: 'Patrick Hand', cursive;
+}
+.navlist li span {
+  margin-left: 60px;
+}
