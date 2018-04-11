@@ -6,7 +6,7 @@ router.route("/")
   .get(taskController.findAll)
   .post(taskController.create);
 
-// Matches with "/api/books/:id"
+// Matches with "/api/task/:id"
 router
   .route("/:id")
   .get(taskController.findById)

@@ -1,9 +1,8 @@
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 
 //Schema
-//HAVE TO CREATE REFERENCE FOR CREATOR ID (USE BOOKS EXAMPLE)
-
+//HAVE TO CREATE REFERENCE FOR CREATOR ID
 const taskSchema = new Schema({
   title: {type: String },
   creatorID: {type: String, required: true, unique: true },
