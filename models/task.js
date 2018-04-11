@@ -1,14 +1,15 @@
-
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
 //Schema
 //HAVE TO CREATE REFERENCE FOR CREATOR ID (USE BOOKS EXAMPLE)
 
-var taskSchema = new Schema({
-  title: type: String,
+const taskSchema = new Schema({
+  title: {type: String },
   creatorID: {type: String, required: true, unique: true },
-  dateDue: { type: String, required: true },
+  dateDue: {type: String, required: true },
 });
 
-var task = mongoose.model("tasks", taskSchema);
+const Task = mongoose.model("Task", taskSchema);
+
+module.exports = Task;
