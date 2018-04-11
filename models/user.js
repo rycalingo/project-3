@@ -1,4 +1,3 @@
-
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
@@ -10,4 +9,6 @@ var userSchema = new Schema({
   password: { type: String, required: true },
 });
 
-var user = mongoose.model("users", userSchema);
+var User = mongoose.model("User", userSchema);
+
+module.exports = User;
