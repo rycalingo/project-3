@@ -19,7 +19,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "client": "cd client && yarn start & npm run watch-css",
-    "watch-css": "node-sass -w --source-map true public/assets/scss/ -o public/assets/css/",
+    "watch-css": "node-sass -w --source-map true src/styles/scss/ -o src/styles/css/",
     "server": "nodemon server.js",
     "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
   },
