@@ -1,38 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import home from "./pages/home";
+import Navbar from "./components/Navbar";
 
-// import logo from './logo.svg';
-
-// import './assets/css/styles.css';
-
-class App extends Component {
-  state = {
-    response: ''
-  };
-
-  // componentDidMount() {
-  //   this.callApi()
-  //     .then(res => this.setState({ response: res.express }))
-  //     .catch(err => console.log(err));
-  // }
-
-  callApi = async () => {
-    const response = await fetch('/api/public');
-    const body = await response.json();
-
-    if (response.status !== 200) throw Error(body.message);
-
-    return body;
-  };
-
-  render() {
-    return (
-      <div className="App">
-        <div className="pad-wrapper">
-            <p>HERE!</p>
-        </div>
-      </div>
-    );
-  }
-}
+const App = () =>
+  <Router>
+    <div>
+      <Navbar />
+      <Switch>
+        <Route exact path="/" component={home} />
+      
+      </Switch>
+    </div>
+  </Router>;
 
 export default App;
