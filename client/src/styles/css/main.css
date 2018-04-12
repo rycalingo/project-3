@@ -1,11 +1,12 @@
 @import url("https://fonts.googleapis.com/css?family=Patrick+Hand");
+body {
+  background: url("../../images/project3_Background.png") center 0/889px 1167px no-repeat #d4171e; }
+
 .main-content {
   height: 100vh;
   margin: 0;
   padding: 1px 0 0 0;
   font-family: sans-serif;
-  background: url("../../images/project3_Background.png") center 0/889px 1167px no-repeat;
-  background-color: #d4171e;
   position: relative; }
 
 .arrow-right:after {
@@ -24,9 +25,9 @@
   width: 180px;
   margin: 0;
   padding: 0;
-  position: fixed;
-  top: 290px;
-  left: 70px;
+  position: absolute;
+  top: 0;
+  left: -185px;
   background: #ffe46d; }
   .navlist li {
     position: relative;
@@ -45,6 +46,9 @@
   border: none;
   background: none;
   border-bottom: 1px solid #77ccfd; }
+
+.form-wrapper .form-control:focus {
+  background-color: #fff3; }
 
 @media all and (min-width: 480px) {
   .form-wrapper {

@@ -1,35 +1,37 @@
 @import url('https://fonts.googleapis.com/css?family=Patrick+Hand');
 
+body { background: url('../../images/project3_Background.png') center 0 / 889px 1167px no-repeat #d4171e; }
+
 .main-content {
     height: 100vh;
     margin: 0;
     padding: 1px 0 0 0;
     font-family: sans-serif;
-    background: url('../../images/project3_Background.png') center 0 / 889px 1167px no-repeat;
-    background-color: #d4171e;
     position: relative;
+}
+@mixin arrow-right($width, $color) {
+    border-top: $width solid transparent;
+    border-bottom: $width solid transparent;
+    border-left: $width solid $color;
 }
 
 .arrow-right:after {
     content: " ";
     width: 0;
     height: 0;
-    /* background: url('../../images/arrow-right.svg') 0 0 / contain no-repeat; */
-    border-top: 22px solid transparent;
-    border-bottom: 22px solid transparent;
-    border-left: 22px solid #d4171e;
+    @include arrow-right(22px, #d4171e);
     position: absolute;
     top: 0;
     right: -23px;
-  }
+}
   
-  .navlist {
+.navlist {
     width: 180px;
     margin: 0;
     padding: 0;
-    position: fixed;
-    top: 290px;
-    left: 70px;
+    position: absolute;
+    top: 0;
+    left: -185px;
     background: #ffe46d;
 
     li {
@@ -42,21 +44,30 @@
         border-right: 1px solid #ffffff;
         /* font style */
         font-family: 'Patrick Hand', cursive;
-        
+
         span {
-        margin-left: 60px;
+            margin-left: 60px;
         }
     }
-  }
+}
 
+.form-wrapper {
 
+    input {
+        border: none;
+        background: none;
+        border-bottom: 1px solid #77ccfd;
+    }
 
-  .form-wrapper input {
-    border: none;
-    background: none;
-    border-bottom: 1px solid #77ccfd;
-  }
-  @media all and (min-width: 480px) {
+    .form-control {
+
+        &:focus {
+            background-color: #fff3;
+        }
+    }
+}
+
+@media all and (min-width: 480px) {
   
     .form-wrapper {
         margin-top: 290px;
@@ -67,4 +78,4 @@
             max-width: 420px;
         }
     }
-  }
+}
