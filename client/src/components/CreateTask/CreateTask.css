@@ -1,13 +1,10 @@
 label { font-family: 'Patrick Hand', cursive; }
 
-.task-wrapper {
+.createtask-wrapper {
   text-align: center;
   margin: 10px auto;
   padding: 0 10px;
-}
-
-
-.task-wrapper  {
   margin-top:290px;
   padding:60px 0;
 }
+
