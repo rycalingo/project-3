@@ -1,8 +1,57 @@
+@import url("https://fonts.googleapis.com/css?family=Patrick+Hand");
 .main-content {
+  height: 100vh;
   margin: 0;
-  padding: 0;
+  padding: 1px 0 0 0;
   font-family: sans-serif;
   background: url("../../images/project3_Background.png") center 0/889px 1167px no-repeat;
-  background-color: #d4171e; }
+  background-color: #d4171e;
+  position: relative; }
+
+.arrow-right:after {
+  content: " ";
+  width: 0;
+  height: 0;
+  /* background: url('../../images/arrow-right.svg') 0 0 / contain no-repeat; */
+  border-top: 22px solid transparent;
+  border-bottom: 22px solid transparent;
+  border-left: 22px solid #d4171e;
+  position: absolute;
+  top: 0;
+  right: -23px; }
+
+.navlist {
+  width: 180px;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  top: 290px;
+  left: 70px;
+  background: #ffe46d; }
+  .navlist li {
+    position: relative;
+    list-style: none;
+    background-color: #fbea9c;
+    width: inherit;
+    padding: 10px;
+    margin: 5px 0;
+    border-right: 1px solid #ffffff;
+    /* font style */
+    font-family: 'Patrick Hand', cursive; }
+    .navlist li span {
+      margin-left: 60px; }
+
+.form-wrapper input {
+  border: none;
+  background: none;
+  border-bottom: 1px solid #77ccfd; }
+
+@media all and (min-width: 480px) {
+  .form-wrapper {
+    margin-top: 290px;
+    padding: 60px 0; }
+    .form-wrapper form {
+      margin: 0 auto;
+      max-width: 420px; } }
 
 /*# sourceMappingURL=main.css.map */

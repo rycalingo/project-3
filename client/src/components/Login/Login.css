@@ -1,0 +1,16 @@
+
+label { font-family: 'Patrick Hand', cursive; }
+
+.signupLink {
+
+  text-align: center;
+  margin: 10px auto;
+  padding: 0 10px;
+}
+.signupLink span {
+  color: #c5deff;
+  font-weight: 600;
+}
+.signupLink span:hover {
+  color: #2483ff;
+}
