@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import Navlist from "../components/Navlist";
-import Tasks from "../components/Tasks";
+import Task from "../components/Task";
 import './home.css';
-import Taskslist from "../components/Tasks";
 
-export default class overview extends Component {
+export default class task extends Component {
 
   
     render() {
@@ -12,9 +11,9 @@ export default class overview extends Component {
           <div className="App">
             <div className="pad-wrapper">
             <Navlist />
-            <Tasks />
-            <Taskslist />
-             
+            <Task />
+           
+      
             
             </div>
           </div>
