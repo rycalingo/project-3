@@ -5,7 +5,7 @@ import "./Navlist.css";
 const Navlist = props =>
       <ul className="navlist">
         <li className="nav-li arrow-right">
-        <a href="/signup"><span>Create Task</span></a>
+        <a href="/task"><span>Create Task</span></a>
         </li>
         <li className="nav-li arrow-right">
         <a href="/signup"><span>Group Members</span></a>

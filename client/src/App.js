@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import home from "./pages/home";
 import SignUp from "./pages/SignUp";
 import overview from "./pages/overview"
+import task from "./pages/task";
 
 
 // import Navbar from "./components/Navbar";
@@ -16,6 +17,7 @@ const App = () =>
         <Route exact path="/" component={home} />
         <Route exact path="/signup" component={SignUp} />
         <Route exact path="/overview" component={overview}/>
+        <Route exact path="/task" component={task}/> 
 
       </Switch>
     </div>
