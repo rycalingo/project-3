@@ -1,54 +1,49 @@
-import { Modal } from 'react-bootstrap';
-
 import React from "react";
+
+// import { Modal, Button } from 'react-bootstrap';
 import "./CreateTask.css";
 
 import Input from "./Input";
 
-export default class CreateTask extends React.Component {
-    constructor(props, context) {
-      super(props, context);
-  
-      this.handleShow = this.handleShow.bind(this);
-      this.handleClose = this.handleClose.bind(this);
-  
-      this.state = {
-        show: false
-      };
-    }
-  
-    handleClose() {
-      this.setState({ show: false });
-    }
-  
-    handleShow() {
-      this.setState({ show: true });
-    }
-  
-    render() {
+/* eslint react/no-multi-comp: 0, react/prop-types: 0 */
 
-      return (
-        <div>
-          <Button bsStyle="primary" bsSize="large" onClick={this.handleShow}>
-            Create
-          </Button>
-  
-          <Modal show={this.state.show} onHide={this.handleClose}>
-            <Modal.Header closeButton>
-              <Modal.Title>Modal heading</Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-                <form>
-                    <Input name="title" placeholder="Title (required)" />
-                    <Input name="duedate" placeholder="Due Date (required)" />
-                </form>
-              
-            </Modal.Body>
-            <Modal.Footer>
-              <Button onClick={this.handleClose}>Close</Button>
-            </Modal.Footer>
-          </Modal>
-        </div>
-      );
-    }
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+
+class CreateTask extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      modal: false
+    };
+
+    this.toggle = this.toggle.bind(this);
   }
+
+  toggle() {
+    this.setState({
+      modal: !this.state.modal
+    });
+  }
+
+  render() {
+    return (
+      <div className="createTask-form">
+        <Button color="danger" onClick={this.toggle}>Create Task</Button>
+        <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
+          <ModalHeader toggle={this.toggle}>Create Task</ModalHeader>
+          <ModalBody>
+          <Input name="title" placeholder="Title" />
+          <Input name="description" placeholder="Description" />
+          <Input name="duedate" placeholder="Due Date" />
+          </ModalBody>
+          <ModalFooter>
+            <Button color="primary" onClick={this.toggle}>Create</Button>{' '}
+            <Button color="secondary" onClick={this.toggle}>Cancel</Button>
+          </ModalFooter>
+        </Modal>
+      </div>
+    );
+  }
+}
+
+export default CreateTask;

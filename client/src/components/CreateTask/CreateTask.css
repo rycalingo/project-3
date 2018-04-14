@@ -8,3 +8,7 @@ label { font-family: 'Patrick Hand', cursive; }
   padding:60px 0;
 }
 
+.createTask-form {
+  position: absolute;
+  left: 215px;
+}
