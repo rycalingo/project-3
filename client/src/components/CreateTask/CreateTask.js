@@ -46,6 +46,7 @@ class CreateTask extends React.Component {
       description: this.state.description,
       duedate: this.state.duedate
       })
+      .then(res => console.log(res))
       .catch(err => console.log(err));
 
     this.setState({
@@ -65,7 +66,7 @@ class CreateTask extends React.Component {
           <Input onChange={this.handleInputChange} name="duedate" placeholder="Due Date" />
           </ModalBody>
           <ModalFooter>
-            <Button color="primary" href="/api/task" onClick={this.createTaskHandler}>Create</Button>{' '}
+            <Button color="primary" href="/task" onClick={this.createTaskHandler}>Create</Button>{' '}
             <Button color="secondary" onClick={this.toggle}>Cancel</Button>
           </ModalFooter>
         </Modal>
