@@ -1,4 +1,4 @@
-
+import Tasks from "./client/src/components/CreateTask";
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
@@ -19,6 +19,40 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Send every request to the React app
+//=======================================================
+router.route("/task")
+ //retrieve all comments from the database
+ .get(function(req, res) {
+ //looks at our Comment Schema
+ Task.find(function(err, task) {
+ if (err)
+ res.send(err);
+ //responds with a json object of our database comments.
+ res.json(Task)
+ });
+ })
+ //post new comment to the database
+ .post(function(req, res) {
+ var Task = new Task();
+ //body parser lets us use the req.body
+ Task.author = req.body.author;
+ Task.text = req.body.text;
+
+Task.save(function(err) {
+ if (err)
+ res.send(err);
+ res.json({ message: "Comment successfully added!" });
+ });
+ });
+//======================================================
+//Use our router configuration when we call /api
+app.use("/api", router);
+//starts the server and listens for requests
+app.listen(port, function() {
+ console.log(`api running on port ${port}`);
+});
+
+//=======================================================
 // Define any API routes before this runs
 app.use(routes);
 
