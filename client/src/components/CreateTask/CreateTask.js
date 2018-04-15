@@ -1,4 +1,5 @@
 import React from "react";
+import API from "../../utils/API";
 
 // import { Modal, Button } from 'react-bootstrap';
 import "./CreateTask.css";
@@ -13,13 +14,38 @@ class CreateTask extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      modal: false
+      modal: false,
+      title: '',
+      description: '',
+      duedate: ''
     };
 
     this.toggle = this.toggle.bind(this);
+    this.createTaskHandler = this.createTaskHandler.bind(this);
   }
 
   toggle() {
+    this.setState({
+      modal: !this.state.modal
+    });
+  }
+
+  handleInputChange = event => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    });
+  }
+
+  createTaskHandler = event => {
+    API.saveTask({
+      title: this.state.title,
+      description: this.state.description,
+      duedate: this.state.duedate
+      })
+      .then(res => console.log(res))
+      .catch(err => console.log(err));
+
     this.setState({
       modal: !this.state.modal
     });
@@ -32,12 +58,12 @@ class CreateTask extends React.Component {
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
           <ModalHeader toggle={this.toggle}>Create Task</ModalHeader>
           <ModalBody>
-          <Input name="title" placeholder="Title" />
-          <Input name="description" placeholder="Description" />
-          <Input name="duedate" placeholder="Due Date" />
+          <Input onChange={this.handleInputChange} name="title" placeholder="Title" />
+          <Input onChange={this.handleInputChange} name="description" placeholder="Description" />
+          <Input onChange={this.handleInputChange} name="duedate" placeholder="Due Date" />
           </ModalBody>
           <ModalFooter>
-            <Button color="primary" onClick={this.toggle}>Create</Button>{' '}
+            <Button color="primary" href="/task" onClick={this.createTaskHandler}>Create</Button>{' '}
             <Button color="secondary" onClick={this.toggle}>Cancel</Button>
           </ModalFooter>
         </Modal>

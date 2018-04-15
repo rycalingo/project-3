@@ -1,0 +1,7 @@
+{
+  "name": "WhoDo",
+  "description": "A Task Manager System with an easy to use UI",
+  "repository": "https://github.com/rycalingo/project-3",
+  "logo": "https://who-do.herokuapp.com/whodo.png",
+  "keywords": ["Ttask", "managment"]
+}
