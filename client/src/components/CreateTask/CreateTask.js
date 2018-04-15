@@ -20,11 +20,8 @@ class CreateTask extends React.Component {
       duedate: ''
     };
 
-
-
     this.toggle = this.toggle.bind(this);
     this.createTaskHandler = this.createTaskHandler.bind(this);
-
   }
 
   toggle() {
