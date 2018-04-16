@@ -2,7 +2,7 @@
 const router = require("express").Router();
 const taskRoutes = require("./task");
 
-// Book routes
-router.use("/task", taskRoutes);
+// Task routes
+router.use("/task", taskRoutes, (res, req)=> console.log(req));
 
 module.exports = router;

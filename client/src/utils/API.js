@@ -14,7 +14,7 @@ export default {
     return axios.delete("/api/task/" + id);
   },
   // Saves a book to the database
-  saveTask: function(taskData) {
-    return axios.post("/api/task", taskData);
+  createTask: function(taskData) {
+    return axios.post("/task/api", taskData);
   }
 };
