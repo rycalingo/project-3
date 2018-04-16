@@ -16,5 +16,21 @@ export default {
   // Saves a book to the database
   createTask: function(taskData) {
     return axios.post("/task/api", taskData);
-  }
+  },
+
+  getUsers: function() {
+    return axios.get("/users/api");
+  },
+  // Gets the book with the given id
+  getUser: function(id) {
+    return axios.get("/users/api" + id);
+  },
+  // Deletes the book with the given id
+  deleteUser: function(id) {
+    return axios.delete("/users/api" + id);
+  },
+  // Saves a book to the database
+  createUser: function(taskData) {
+    return axios.post("/users/api", taskData);
+},
 };

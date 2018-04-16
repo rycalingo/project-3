@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-var bcrypt = require('bcrypt');
+var bcryptjs = require('bcryptjs');
 // const SALT_WORK_FACTOR = 10;
 
 // User
