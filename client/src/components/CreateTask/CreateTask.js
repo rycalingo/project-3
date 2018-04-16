@@ -34,8 +34,13 @@ class CreateTask extends React.Component {
   }
 
   handleInputChange = event => {
+    const data = this.state.task;
     const { name, value } = event.target;
-      this.state.task[name] = value;
+    data[name] = value;
+
+    this.setState({
+      task: data
+    })
   }
 
   createTaskHandler = event => {
