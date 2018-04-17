@@ -1,7 +1,7 @@
 
 const router = require("express").Router();
 const taskRoutes = require("./task");
-const userRoutes = require("./signup");
+const userRoutes = require("./user");
 
 // Task routes
 router.use("/task", taskRoutes, (res, req)=> console.log(req));

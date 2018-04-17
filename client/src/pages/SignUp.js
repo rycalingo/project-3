@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+import API from "axios"
+
 
 export default class Login extends Component {
   constructor(props) {
@@ -14,6 +16,7 @@ export default class Login extends Component {
   }
 
   validateForm() {
+    console.log(this.state)
     return this.state.name.length > 0 && this.state.email.length > 0 && this.state.username.length > 0 && this.state.password.length > 0;
   }
 
@@ -25,27 +28,28 @@ export default class Login extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
+    //.then(res => console.log(res.status))
   }
 
   render() {
     return (
       <div className="SignUp form-wrapper">
         <form onSubmit={this.handleSubmit}>
-          <FormGroup controlId="Name" bsSize="large">
+          <FormGroup controlId="name" bsSize="large">
             <ControlLabel>Name</ControlLabel>
             <FormControl
               autoFocus
-              type="Name"
-              value={this.state.Name}
+              type="name"
+              value={this.state.name}
               onChange={this.handleChange}
             />
           </FormGroup>
-             <FormGroup controlId="Email" bsSize="large">
+             <FormGroup controlId="email" bsSize="large">
             <ControlLabel>Email</ControlLabel>
             <FormControl
               autoFocus
-              type="Email"
-              value={this.state.Email}
+              type="email"
+              value={this.state.email}
               onChange={this.handleChange}
             />
           </FormGroup>
