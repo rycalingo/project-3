@@ -30,7 +30,9 @@ export default {
     return axios.delete("/users/api" + id);
   },
   // Saves a book to the database
-  createUser: function(taskData) {
-    return axios.post("/users/api", taskData);
+  createUser: function(userData) {
+    console.log("in utils");
+    console.log(userData);
+    return axios.post("/users/api", userData);
 },
 };

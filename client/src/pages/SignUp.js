@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
-import API from "axios"
+import API from "../utils/API";
 
 
 export default class Login extends Component {
@@ -28,13 +28,16 @@ export default class Login extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    //.then(res => console.log(res.status))
+    console.log("in submit");
+    API.createUser(this.state)
+      .then(res => console.log(res.status))
+      .catch(err => console.log(err));
   }
 
   render() {
     return (
       <div className="SignUp form-wrapper">
-        <form onSubmit={this.handleSubmit}>
+        <form>
           <FormGroup controlId="name" bsSize="large">
             <ControlLabel>Name</ControlLabel>
             <FormControl
@@ -75,6 +78,8 @@ export default class Login extends Component {
             bsSize="large"
             disabled={!this.validateForm()}
             type="submit"
+            href="/users/api"
+            onClick={this.handleSubmit}
           >
             SignUp
           </Button>
