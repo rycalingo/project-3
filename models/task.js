@@ -9,6 +9,7 @@ var Schema = mongoose.Schema;
 const taskSchema = new Schema({
   title: {type: String },
   description: {type: String, required: true },
+  assignee:  {type: String, required: true },
   duedate: {type: String, required: true }
 });
 

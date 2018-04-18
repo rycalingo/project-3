@@ -2,7 +2,7 @@ const router = require("express").Router();
 const taskController = require("../../controllers/taskController");
 
 // Matches with "/api/task"
-router.route("/")
+router.route("/api")
   .get(taskController.findAll)
   .post(taskController.create);
 

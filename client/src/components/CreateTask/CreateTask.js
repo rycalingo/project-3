@@ -15,9 +15,12 @@ class CreateTask extends React.Component {
     super(props);
     this.state = {
       modal: false,
-      title: '',
-      description: '',
-      duedate: ''
+      task: {
+        title: '',
+        description: '',
+        assignee: '', 
+        duedate: ''
+        }
     };
 
     this.toggle = this.toggle.bind(this);
@@ -31,19 +34,19 @@ class CreateTask extends React.Component {
   }
 
   handleInputChange = event => {
+    const data = this.state.task;
     const { name, value } = event.target;
+    data[name] = value;
+
     this.setState({
-      [name]: value
-    });
+      task: data
+    })
   }
 
   createTaskHandler = event => {
-    API.saveTask({
-      title: this.state.title,
-      description: this.state.description,
-      duedate: this.state.duedate
-      })
-      .then(res => console.log(res))
+    event.preventDefault();
+    API.createTask(this.state.task)
+      .then(res => console.log(res.status))
       .catch(err => console.log(err));
 
     this.setState({
@@ -60,10 +63,11 @@ class CreateTask extends React.Component {
           <ModalBody>
           <Input onChange={this.handleInputChange} name="title" placeholder="Title" />
           <Input onChange={this.handleInputChange} name="description" placeholder="Description" />
+          <Input onChange={this.handleInputChange} name="assignee" placeholder="Asign To" />
           <Input onChange={this.handleInputChange} name="duedate" placeholder="Due Date" />
           </ModalBody>
           <ModalFooter>
-            <Button color="primary" href="/task" onClick={this.createTaskHandler}>Create</Button>{' '}
+            <Button color="primary" href="/task/api" onClick={this.createTaskHandler}>Create</Button>{' '}
             <Button color="secondary" onClick={this.toggle}>Cancel</Button>
           </ModalFooter>
         </Modal>
