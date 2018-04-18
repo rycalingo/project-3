@@ -61,6 +61,11 @@ export default class Login extends Component {
   componentDidMount() {
     console.log(this.state.signedIn);
   }
+
+  redirect() {
+    <Redirect to='/'/>
+  }
+
   render() {
     if (this.state.signedIn === true) {
       return <Redirect to='/task' />
@@ -117,6 +122,15 @@ export default class Login extends Component {
             onClick={this.handleSubmit}
           >
             SignUp
+          </Button>
+          <Button
+            block
+            bsSize="large"
+            type="submit"
+            href="/"
+            onClick= {this.redirect}
+          >
+            Sorry! I have an account.
           </Button>
         </form>
         

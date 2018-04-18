@@ -17,4 +17,4 @@ const taskSchema = new Schema({
 const Task = mongoose.model("Task", taskSchema);
 
 Task.find({ notInSchema: 1});
-module.exports = Task;
+module.exports = Task

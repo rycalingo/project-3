@@ -8,13 +8,13 @@ const Navlist = props =>
         <a href="/task"><span>Create Task</span></a>
         </li>
         <li className="nav-li arrow-right">
-        <a href="/signup"><span>Group Members</span></a>
+        <a href="/overview"><span>Group Members</span></a>
         </li>
         <li className="nav-li arrow-right">
         <a href="/overview"><span>Overview</span></a>
         </li>
         <li className="nav-li arrow-right">
-        <a href="/"><span>Search</span></a>
+        <a href="/"><span>LogOut</span></a>
         </li>
       </ul>
       ;

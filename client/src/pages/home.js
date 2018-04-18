@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-
-import Navlist from "../components/Navlist";
 import Login from "../components/Login";
 
 
@@ -14,7 +12,6 @@ class Home extends Component {
             <div className="App">
 
                 <div className="pad-wrapper">
-                    <Navlist />
 
                     <Login />
                 </div>

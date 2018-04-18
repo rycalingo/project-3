@@ -33,5 +33,29 @@ module.exports = {
       .then(dbModel => dbModel.remove())
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
-  }
-};
+  },
+  signup: function (req, res) {
+
+    res.render('signupx');
+
+},
+
+  signin: function (req, res) {
+
+    res.render('signin');
+
+},
+
+  mainpage: function (req, res) {
+
+    res.render('mainpage');
+
+},
+
+  logout: function (req, res) {
+
+    req.session.destroy(function (err) {
+        res.redirect('/');
+    });
+}
+}
