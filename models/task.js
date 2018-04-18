@@ -12,8 +12,9 @@ const taskSchema = new Schema({
   description: {type: String, required: true },
   assignee:  {type: String, required: true },
   duedate: {type: String, required: true }
-},{ _id: false });
+}, {strict: true, strictQuery: true});
 
 const Task = mongoose.model("Task", taskSchema);
 
+Task.find({ notInSchema: 1});
 module.exports = Task;
