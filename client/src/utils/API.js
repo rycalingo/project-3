@@ -3,19 +3,19 @@ import axios from "axios";
 export default {
   // Gets all Task
   getTasks: function() {
-    return axios.get("/api/task");
+    return axios.get("/task/api/")
   },
   // Gets the book with the given id
   getTask: function(id) {
-    return axios.get("/api/task/" + id);
+    return axios.get("/task/api/" + id);
   },
   // Deletes the book with the given id
   deleteTask: function(id) {
-    return axios.delete("/api/task/" + id);
+    return axios.delete("/task/api/" + id);
   },
-  // Saves a book to the database
-  createTask: function(taskData) {
-    return axios.post("/task/api", taskData);
+  // Saves a book to the   database
+  createTask: function() {
+    return axios.post("/task/api");
   },
 
   getUsers: function() {

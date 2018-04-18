@@ -16,6 +16,14 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   create: function(req, res) {
+    const task = [ 
+      {
+      title: '',
+      description: '',
+      assignee: '', 
+      duedate: ''
+      },
+    ]
     db.Task
       .create(req.body)
       .then(dbModel => res.json(dbModel))
