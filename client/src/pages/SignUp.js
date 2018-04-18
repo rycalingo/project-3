@@ -67,7 +67,7 @@ export default class Login extends Component {
     if (this.state.signedIn === true) {
       return <Redirect to='/' />
     }
-    
+    //
     return (
       <div className="SignUp form-wrapper">
         <form>
