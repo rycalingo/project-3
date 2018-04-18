@@ -14,7 +14,25 @@ export default {
     return axios.delete("/api/task/" + id);
   },
   // Saves a book to the database
-  saveTask: function(taskData) {
-    return axios.post("/api/task", taskData);
-  }
+  createTask: function(taskData) {
+    return axios.post("/task/api", taskData);
+  },
+
+  getUsers: function() {
+    return axios.get("/users/api");
+  },
+  // Gets the book with the given id
+  getUser: function(id) {
+    return axios.get("/users/api" + id);
+  },
+  // Deletes the book with the given id
+  deleteUser: function(id) {
+    return axios.delete("/users/api" + id);
+  },
+  // Saves a book to the database
+  createUser: function(userData) {
+    console.log("in utils");
+    console.log(userData);
+    return axios.post("/users/api", userData);
+},
 };
