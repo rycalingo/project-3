@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Route } from 'react-router-dom'
 import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import API from "../utils/API";
 
@@ -17,13 +16,12 @@ export default class Login extends Component {
         username: "",
         password: ""
       },
-      signedIn: false
+      signedIn: false,
+
     };
 
     this.updateRoute = this.updateRoute.bind(this)
   }
-
-
 
   validateForm() {
     return this.state.user.name.length > 0 && this.state.user.email.length > 0 && this.state.user.username.length > 0 && this.state.user.password.length > 0;
@@ -34,7 +32,6 @@ export default class Login extends Component {
     const user = this.state.user;
     const { name, value, id } = event.target;
     user[id] = event.target.value;
- 
     this.setState({ user });
   }
   updateRoute () {
@@ -50,7 +47,8 @@ export default class Login extends Component {
         if ( res.status === 200) {
           console.log('um...')
           this.updateRoute()
-
+        } else {
+          window.location.reload(); 
         }
 
       
@@ -65,7 +63,7 @@ export default class Login extends Component {
   }
   render() {
     if (this.state.signedIn === true) {
-      return <Redirect to='/' />
+      return <Redirect to='/task' />
     }
     //
     return (

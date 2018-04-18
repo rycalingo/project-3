@@ -6,6 +6,9 @@ router.route("/api")
   .get(userController.findAll)
   .post(userController.create);
 
+  router.route("/api/login")
+  .get(userController.findById);
+
 // Matches with "/user/api/:id"
 router
   .route("/:id")
