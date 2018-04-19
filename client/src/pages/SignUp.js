@@ -44,12 +44,13 @@ export default class Login extends Component {
       .then(res => {
         // console.log(res.status)
         console.log(res.status)
-        if ( res.status === 200) {
-          console.log('um...')
-          this.updateRoute()
-        } else {
-          window.location.reload(); 
-        }
+        this.updateRoute()
+        // if ( res.status === 200) {
+        //   console.log('um...')
+        //   this.updateRoute()
+        // } else {
+        //   window.location.reload(); 
+        // }
 
       
       })
