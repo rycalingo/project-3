@@ -23,7 +23,8 @@ if (process.env.NODE_ENV === "production") {
 app.use(routes);
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/taskList");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/taskList",
+  { useNewUrlParser: true, useUnifiedTopology: true });
 
 app.listen(PORT, function() {
   console.log(`🌎 ==> Server now on port ${PORT}!`);
