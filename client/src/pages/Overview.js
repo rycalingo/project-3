@@ -4,7 +4,7 @@ import Tasks from "../components/Tasks";
 import './home.css';
 import Taskslist from "../components/Tasks";
 
-export default class overview extends Component {
+export default class Overview extends Component {
 
   
     render() {

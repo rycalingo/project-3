@@ -4,7 +4,7 @@ import Task from "../components/Task";
 import CreateTask from "../components/CreateTask";
 import './home.css';
 
-export default class task extends Component {
+export default class TaskDisplay extends Component {
 
     render() {
         return (

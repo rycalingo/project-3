@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import home from "./pages/home";
+import Home from "./pages/Home";
 import SignUp from "./pages/SignUp";
-import overview from "./pages/overview"
-import task from "./pages/task";
+import Overview from "./pages/Overview"
+import TaskDisplay from "./pages/TaskDisplay";
 
 
 // import Navbar from "./components/Navbar";
@@ -14,10 +14,10 @@ const App = () =>
   <Router>
     <div className="main-content">
       <Switch>
-        <Route exact path="/" component={home} />
+        <Route exact path="/" component={Home} />
         <Route exact path="/signup" component={SignUp} />
-        <Route exact path="/overview" component={overview}/>
-        <Route exact path="/task" component={task}/> 
+        <Route exact path="/overview" component={Overview}/>
+        <Route exact path="/task" component={TaskDisplay}/> 
 
       </Switch>
     </div>

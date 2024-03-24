@@ -1,7 +1,7 @@
-export { default } from "./Home.js";
-export { default } from "./SignUp.js";
-export { default } from "./overview.js"
-export { default } from "./tasks.js";
+export * from "./Home.js";
+export * from "./SignUp.js";
+export * from "./Overview.js"
+export * from "./Tasks.js";
 
 
 

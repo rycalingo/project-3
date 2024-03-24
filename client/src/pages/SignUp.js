@@ -6,7 +6,7 @@ import API from "../utils/API";
 import {Redirect} from "react-router-dom";
 
 
-export default class Login extends Component {
+export default class SignUp extends Component {
   constructor(props) {
     super(props);
 
