@@ -6,7 +6,6 @@
     "bcryptjs": "^2.4.3",
     "express": "^4.16.3",
     "mongoose": "^5.13.16",
-    "node-sass": "^5.0.0",
     "nodemon": "^2.0.22",
     "react": "^16.14.0",
     "react-bootstrap": "^0.32.1",
@@ -21,11 +20,13 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "client": "cd client && yarn start & npm run watch-css",
-    "watch-css": "node-sass -w --source-map true client/src/styles/scss/ -o client/src/styles/css/",
+    "watch-css": "sass client/src/styles/scss/:client/src/styles/css/ -w",
+    "old-watch-css": "node-sass -w --source-map true client/src/styles/scss/ -o client/src/styles/css/",
     "server": "nodemon server.js",
     "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
   },
   "devDependencies": {
-    "concurrently": "^3.5.1"
+    "concurrently": "^3.5.1",
+    "sass": "^1.72.0"
   }
 }
